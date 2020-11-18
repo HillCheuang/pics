@@ -24,6 +24,18 @@ spring:
       password: a
   application:
     name: baseservice_eureka
+#监控配置
+info:
+  app.name: PROVIDER2
+  company.name: HillCheung
+  build.artifactId:  $project.artifactId$
+  build.modelVerison: $project.modelVersion$
+  build.javaVersion: $java.version$
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 ---
 server:
  port: 7002
@@ -46,3 +58,15 @@ spring:
       password: a
   application:
     name: microcloud-config-eureka-client
+#监控配置
+info:
+  app.name: PROVIDER2
+  company.name: HillCheung
+  build.artifactId:  $project.artifactId$
+  build.modelVerison: $project.modelVersion$
+  build.javaVersion: $java.version$
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
