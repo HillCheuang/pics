@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+ port: 9001
+spring:
+  profiles: dev
+  application:
+    name: baseservice_hystrix-dashboard
+---
+server:
+  port:9002
+spring:
+  profiles:beta
+  application:
+    name: baseservice_hystrix-dashboard
