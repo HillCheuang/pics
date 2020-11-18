@@ -1,0 +1,38 @@
+  spring:
+    profiles:
+      active:
+        - dev
+---
+server:
+  port: 9101
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone:http://admin:a@eureka1:7001/eureka
+spring:
+  profiles: dev
+  application:
+    name: baseservice_hystrix-turbine
+turbine:
+  app-config: MICROSERVICE-PROVIDER-PRODUCT,MICROSERVICE-PROVIDER-USER  #需要收集信息的服务名
+  cluster-name-expression: new String("default")
+  combine-host-port: true # 同一主机上的服务通过主机名和端口号的组合来进行区分，默认以host来区分
+---
+
+server:
+ port: 9102
+eureka:
+  client:
+    fetch-registry: false
+    service-url:
+        defaultZone: http://admin:a@localhost:7001/eureka
+spring:
+  profiles: beta
+  application:
+    name: baseservice_hystrix-turbine
+    
+turbine:
+  app-config: MICROSERVICE-PROVIDER-PRODUCT,MICROSERVICE-PROVIDER-USER  #需要收集信息的服务名
+  cluster-name-expression: new String("default")
+  combine-host-port: true # 同一主机上的服务通过主机名和端口号的组合来进行区分，默认以host来区分
