@@ -7,7 +7,7 @@ server:
   port: 9101
 eureka:
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     service-url:
       defaultZone:http://admin:a@eureka1:7301/eureka
 spring:
