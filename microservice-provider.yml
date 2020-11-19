@@ -34,6 +34,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://admin:a@eureka1:7001/eureka,http://admin:a@eureka2:7002/eureka,http://admin:a@eureka3:7003/eureka
+    register-with-eureka: true
   instance:
     instance-id: microservice-provider-product_1   #实例名
     lease-expiration-duration-in-seconds: 90  #如果现在超过了5s的时间间隔( default: 90 s )
