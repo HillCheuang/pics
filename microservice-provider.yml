@@ -8,7 +8,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: microservice-provider
+    name: piclibapi
   #  security:
   #    user:
    #    name: admin
@@ -57,7 +57,7 @@ server:
 spring:
   profiles: dev1
   application:
-    name: microservice-provider
+    name: piclibapi
   #  security:
   #    user:
    #    name: admin
@@ -105,7 +105,7 @@ server:
 spring:
   profiles: dev2
   application:
-    name: microservice-provider
+    name: piclibapi
   #  security:
   #    user:
    #    name: admin
