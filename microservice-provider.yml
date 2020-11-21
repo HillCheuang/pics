@@ -33,7 +33,7 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:a@eureka1:7001/eureka,http://admin:a@eureka2:7002/eureka,http://admin:a@eureka3:7003/eureka
+      defaultZone: http://admin:a@localhost:7301/eureka
     register-with-eureka: true
   instance:
     instance-id: microservice-provider-product_1   #实例名
@@ -82,7 +82,7 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:a@eureka1:7001/eureka,http://admin:a@eureka2:7002/eureka,http://admin:a@eureka3:7003/eureka
+      defaultZone: http://admin:a@localhost:7301/eureka
   instance:
     instance-id: microservice-provider-product_2   #实例名
     lease-expiration-duration-in-seconds: 90  #如果现在超过了5s的时间间隔( default: 90 s )
@@ -130,7 +130,7 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:a@eureka1:7001/eureka,http://admin:a@eureka2:7002/eureka,http://admin:a@eureka3:7003/eureka
+      defaultZone: http://admin:a@localhost:7301/eureka
   instance:
     instance-id: microservice-provider-product_3   #实例名
     lease-expiration-duration-in-seconds: 90  #如果现在超过了5s的时间间隔( default: 90 s )
