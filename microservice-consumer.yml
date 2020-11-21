@@ -1,0 +1,107 @@
+spring:
+   profiles:
+      active:
+        - beta
+---
+
+server:
+  port: 9999     #http://localhost:8888
+
+logging:
+  level:
+    com.yc:  debug    #  None, fatal,error,warning,info,debug,all
+spring:
+  profiles: dev1
+  application:
+    name: userapi
+
+# 保证consumer能服务发现
+eureka:
+  client:
+    register-with-eureka: false    #消费端不须要到eureka中注册
+    service-url:
+      defaultZone: http://admin:a@eureka1:7301/eureka
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: # 可以被压缩的类型
+        - text/xml
+        - application/xml
+        - application/json
+      min-request-size: 2048 # 超过2048的字节进行压缩
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+---
+server:
+  port: 9998     #http://localhost:8888
+
+logging:
+  level:
+    com.yc:  debug    #  None, fatal,error,warning,info,debug,all
+spring:
+  profiles: dev2
+  application:
+    name: userapi
+
+# 保证consumer能服务发现
+eureka:
+  client:
+    register-with-eureka: false    #消费端不须要到eureka中注册
+    service-url:
+      defaultZone: http://admin:a@eureka1:7301/eureka
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: # 可以被压缩的类型
+        - text/xml
+        - application/xml
+        - application/json
+      min-request-size: 2048 # 超过2048的字节进行压缩
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+---
+server:
+  port: 9997     #http://localhost:8888
+
+logging:
+  level:
+    com.yc:  debug    #  None, fatal,error,warning,info,debug,all
+spring:
+  profiles: dev3
+  application:
+    name: userapi
+
+# 保证consumer能服务发现
+eureka:
+  client:
+    register-with-eureka: false    #消费端不须要到eureka中注册
+    service-url:
+      defaultZone: http://admin:a@eureka1:7301/eureka
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: # 可以被压缩的类型
+        - text/xml
+        - application/xml
+        - application/json
+      min-request-size: 2048 # 超过2048的字节进行压缩
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
