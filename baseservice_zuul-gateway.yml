@@ -27,6 +27,25 @@ spring:
       password: a
   application:
     name: microservice-zuul-gateway
+zuul:
+  routes:
+    user1:
+      path: /user1-proxy/**
+      serviceId: userapi
+    user2:        #传统的路由方式
+      path: /user2-proxy/**
+      url: http://localhost:9999/
+    Book:
+      path: /product-proxy/**
+      serviceid: PROVIDER
+      sensitiveHeaders:    #将敏感头信息保留
+  ignored-services:
+    "*"
+  prefix: /yc-api    #公共前缀
+logging:
+  level:
+    com.yc: debug
+
 ---
 server:
  port: 9502
@@ -52,3 +71,21 @@ spring:
       password: a
   application:
     name: microservice-zuul-gateway
+zuul:
+  routes:
+    user1:
+      path: /user1-proxy/**
+      serviceId: userapi
+    user2:        #传统的路由方式
+      path: /user2-proxy/**
+      url: http://localhost:9999/
+    Book:
+      path: /product-proxy/**
+      serviceid: PROVIDER
+      sensitiveHeaders:    #将敏感头信息保留
+  ignored-services:
+    "*"
+  prefix: /yc-api    #公共前缀
+logging:
+  level:
+    com.yc: debug
