@@ -14,3 +14,8 @@ spring:
     username: root
     password: a
     url: jdbc:mysql://localhost:3306/testmis81?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
