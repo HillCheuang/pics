@@ -33,6 +33,6 @@ spring:
     name: baseservice_hystrix-turbine
     
 turbine:
-  app-config: piclibapi,piclibweb,piclibwap,userapi,userweb,userwap  #需要收集信息的服务名
+  app-config: piclibapi,PICWEB,piclibwap,userapi,userweb,userwap  #需要收集信息的服务名
   cluster-name-expression: new String("default")
   combine-host-port: true # 同一主机上的服务通过主机名和端口号的组合来进行区分，默认以host来区分
